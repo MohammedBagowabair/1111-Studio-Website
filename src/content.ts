@@ -28,7 +28,12 @@ export const gallery = [
 
 const en = {
   nav: { make: 'What we make', planner: 'Cabinet planner', process: 'Process', gallery: 'Gallery', contact: 'Contact' },
-  langLabel: 'BM', langAria: 'Tukar ke Bahasa Melayu', menu: 'Menu', close: 'Close',
+  meta: {
+    title: '1111 Studio Design & Build | Custom Cabinets & Interiors, Taman Seputeh KL',
+    desc: 'Interior design & build around custom cabinetry: kitchens, wardrobes, TV walls and storage made to measure. Studio at Taman Seputeh, Kuala Lumpur.',
+  },
+  langLabel: 'BM', langAria: 'BM, tukar ke Bahasa Melayu', menu: 'Menu', close: 'Close',
+  a11y: { main: 'Main', mobile: 'Mobile menu', skip: 'Skip to content', toTop: 'Back to top' },
   hero: {
     tag: 'Interior design & build · Custom cabinets · Taman Seputeh, KL',
     t1: 'Made to measure.', t2: 'Built to last.',
@@ -53,7 +58,8 @@ const en = {
     finishes: { oak: 'Natural oak', walnut: 'Walnut', white: 'Matte white', charcoal: 'Charcoal' } as Record<FinishKey, string>,
     doors: 'doors', modules: 'modules',
     send: 'Send this sketch',
-    msg: 'Hi 1111 Studio, I am planning a {room} cabinet about {w} cm wide in {f} (around {d} doors). Could we arrange a site measurement?',
+    items: { kitchen: 'kitchen cabinets', wardrobe: 'a wardrobe', tv: 'a TV wall unit', storage: 'a storage cabinet' } as Record<Room, string>,
+    msg: 'Hi 1111 Studio, I am planning {item} about {w} cm wide in {f} (around {d} doors). Could we arrange a site measurement?',
     note: 'Indicative sketch only — final design and pricing after site measurement.',
   },
   process: {
@@ -68,7 +74,7 @@ const en = {
   gallery: {
     kicker: 'Gallery', title: 'Illustrative interiors',
     note: 'Stock photos for mood and reference only — not 1111 Studio projects.',
-    open: 'Open image', close: 'Close', prev: 'Previous', next: 'Next',
+    open: 'Open image', close: 'Close', prev: 'Previous image', next: 'Next image',
   },
   faq: {
     kicker: 'FAQ', title: 'Quick answers.',
@@ -85,19 +91,25 @@ const en = {
     wa: 'WhatsApp 1111 Studio', waText: 'Hi 1111 Studio, I would like to discuss an interior / custom cabinet project.',
     call: 'Call', visit: 'Studio', hours: 'Hours', directions: 'Open in Google Maps',
     address: '68, Jalan Taman Seputeh 1, Taman Seputeh, 58000 Kuala Lumpur',
-    hoursText: 'Monday · 10:00 AM – 6:00 PM', hoursNote: 'Other days: please message ahead',
+    hoursDays: 'Monday', hoursTime: '10:00 AM – 6:00 PM', hoursNote: 'Other days: please message ahead',
   },
   footer: {
     pitch: 'Website concept prepared for this studio. Not an official site yet — open to making it yours.',
     pitchLink: 'Talk to the designer',
     credit: 'Interior photos: Unsplash (illustrative).',
+    toTop: 'Back to top',
   },
 }
 export type Content = typeof en
 
 const ms: Content = {
   nav: { make: 'Apa kami buat', planner: 'Perancang kabinet', process: 'Proses', gallery: 'Galeri', contact: 'Hubungi' },
-  langLabel: 'EN', langAria: 'Switch to English', menu: 'Menu', close: 'Tutup',
+  meta: {
+    title: '1111 Studio Design & Build | Kabinet Khas & Reka Bentuk Dalaman, Taman Seputeh KL',
+    desc: 'Reka & bina dalaman berasaskan kabinet khas: dapur, almari pakaian, dinding TV dan storan dibuat ikut ukuran. Studio di Taman Seputeh, Kuala Lumpur.',
+  },
+  langLabel: 'EN', langAria: 'EN, switch to English', menu: 'Menu', close: 'Tutup',
+  a11y: { main: 'Navigasi utama', mobile: 'Menu mudah alih', skip: 'Langkau ke kandungan', toTop: 'Kembali ke atas' },
   hero: {
     tag: 'Reka & bina dalaman · Kabinet khas · Taman Seputeh, KL',
     t1: 'Ikut ukuran anda.', t2: 'Tahan bertahun.',
@@ -119,17 +131,18 @@ const ms: Content = {
     kicker: 'Perancang kabinet', title: 'Lakar. Hantar. Kami ukur.',
     lead: 'Pilih jenis kabinet, tetapkan anggaran lebar dan pilih kemasan. Kami akan menghantar lakaran anda kepada 1111 Studio melalui WhatsApp sebagai permulaan.',
     type: 'Jenis kabinet', width: 'Anggaran lebar', finish: 'Kemasan',
-    finishes: { oak: 'Oak asli', walnut: 'Walnut', white: 'Putih matte', charcoal: 'Arang' },
+    finishes: { oak: 'Oak asli', walnut: 'Walnut', white: 'Putih matte', charcoal: 'Kelabu arang' },
     doors: 'pintu', modules: 'modul',
     send: 'Hantar lakaran ini',
-    msg: 'Hai 1111 Studio, saya merancang kabinet {room} selebar kira-kira {w} cm dalam kemasan {f} (sekitar {d} pintu). Boleh kita aturkan pengukuran tapak?',
+    items: { kitchen: 'kabinet dapur', wardrobe: 'almari pakaian', tv: 'kabinet dinding TV', storage: 'kabinet storan' },
+    msg: 'Hai 1111 Studio, saya merancang {item} selebar kira-kira {w} cm dalam kemasan {f} (sekitar {d} pintu). Boleh kita aturkan pengukuran tapak?',
     note: 'Lakaran anggaran sahaja — reka bentuk dan harga muktamad selepas pengukuran tapak.',
   },
   process: {
     kicker: 'Proses', title: 'Empat langkah. Setiap satu penting.',
     steps: [
       ['Ukur', 'Kami melawat dan mengukur ruang anda dengan teliti — dinding jarang selurus pelan.'],
-      ['Reka', 'Susun atur, bahan dan kemasan dipersetujui bersama sebelum apa-apa dibuat.'],
+      ['Reka bentuk', 'Susun atur, bahan dan kemasan dipersetujui bersama sebelum apa-apa dibuat.'],
       ['Bina', 'Kabinet dan kerja dalaman dibuat mengikut ukuran anda.'],
       ['Pasang', 'Dipasang, diselaraskan dan disemak bersama anda semasa serahan.'],
     ],
@@ -137,7 +150,7 @@ const ms: Content = {
   gallery: {
     kicker: 'Galeri', title: 'Contoh visual dalaman',
     note: 'Foto stok untuk suasana dan rujukan sahaja — bukan projek 1111 Studio.',
-    open: 'Buka imej', close: 'Tutup', prev: 'Sebelum', next: 'Seterusnya',
+    open: 'Buka imej', close: 'Tutup', prev: 'Sebelumnya', next: 'Seterusnya',
   },
   faq: {
     kicker: 'Soalan lazim', title: 'Jawapan pantas.',
@@ -145,7 +158,7 @@ const ms: Content = {
       ['Adakah anda hanya membuat kabinet?', 'Tidak. Kami mengendalikan reka & bina dalaman serta kabinet khas, jadi satu ruang lengkap boleh disiapkan oleh satu pasukan.'],
       ['Adakah perancang kabinet ini satu sebut harga?', 'Tidak — ia lakaran ringkas untuk memulakan perbincangan. Reka bentuk dan harga disahkan selepas kami mengukur ruang anda.'],
       ['Bolehkah saya melawat studio?', 'Boleh. Kami di 68, Jalan Taman Seputeh 1, Taman Seputeh, Kuala Lumpur. Sila WhatsApp atau telefon dahulu supaya kami bersedia.'],
-      ['Bilakah anda dibuka?', 'Kami dibuka pada hari Isnin dari 10:00 pagi hingga 6:00 petang. Untuk hari lain, sila hubungi dahulu untuk mengatur masa.'],
+      ['Bilakah studio anda dibuka?', 'Kami dibuka pada hari Isnin dari 10:00 pagi hingga 6:00 petang. Untuk hari lain, sila hubungi dahulu untuk mengatur masa.'],
     ],
   },
   contact: {
@@ -154,12 +167,13 @@ const ms: Content = {
     wa: 'WhatsApp 1111 Studio', waText: 'Hai 1111 Studio, saya ingin berbincang tentang projek dalaman / kabinet khas.',
     call: 'Telefon', visit: 'Studio', hours: 'Waktu', directions: 'Buka di Google Maps',
     address: '68, Jalan Taman Seputeh 1, Taman Seputeh, 58000 Kuala Lumpur',
-    hoursText: 'Isnin · 10:00 pagi – 6:00 petang', hoursNote: 'Hari lain: sila hubungi dahulu',
+    hoursDays: 'Isnin', hoursTime: '10:00 pagi – 6:00 petang', hoursNote: 'Hari lain: sila hubungi dahulu',
   },
   footer: {
     pitch: 'Konsep laman web disediakan untuk studio ini. Bukan laman rasmi lagi — sedia dijadikan milik anda.',
     pitchLink: 'Hubungi pereka',
     credit: 'Foto dalaman: Unsplash (contoh visual).',
+    toTop: 'Kembali ke atas',
   },
 }
 export const content = { en, ms }

@@ -50,3 +50,11 @@ details[open] .faq-i { transform: rotate(45deg); background: #2D4BEF; color: #ff
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* polish pass */
+h1, h2, h3, .h2, summary { text-wrap: balance; }
+p, li, blockquote { text-wrap: pretty; }
+.nav-link::after { content: ''; position: absolute; left: 0; right: 0; bottom: 6px; height: 2px; border-radius: 2px; background: #2D4BEF; transform: scaleX(0); transform-origin: left; transition: transform .3s cubic-bezier(.2,.8,.2,1); }
+.nav-link:hover::after, .nav-link[aria-current]::after { transform: scaleX(1); }
+.has-dialog [data-fab] { opacity: 0 !important; pointer-events: none !important; }
+summary:hover .faq-i { background: #E6D2BA; }
